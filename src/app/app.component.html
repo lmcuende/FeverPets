@@ -15,14 +15,28 @@
           Home
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link"[routerLink]="['/']" [routerLinkActive]="['active']">
+      <!-- <li class="nav-item">
+        <a class="nav-link"[routerLink]="['/list']" [routerLinkActive]="['active']">
           <fa-icon [icon]="faCat"></fa-icon>
           Pets
           <fa-icon [icon]="faDog"></fa-icon>
         </a>
+      </li> -->
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/pets']" [routerLinkActive]="['active']">
+          <span>
+            <fa-icon [icon]="faDog"></fa-icon>
+            PetsComponent
+          </span>
+        </a>
       </li>
     </ul>
+
+    
+
   </div>
 
 </nav>

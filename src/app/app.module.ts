@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
@@ -9,29 +9,39 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
+
+
 // Components
 import { HomeComponent } from './components/home/home.component';
-import { ListComponent } from './components/list/list.component';
+import { PetsComponent } from './components/pets/pets.component';
+import { PetDetailComponent } from './components/pet-detail/pet-detail.component';
 
 
 // Services
 import { PetService } from './services/pet.service';
+import { MessagesComponent } from './components/messages/messages.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ListComponent
+    PetsComponent,
+    PetDetailComponent,
+    MessagesComponent
+   
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     routing,
     NgbModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     appRoutingProviders,

@@ -1,0 +1,38 @@
+    <div class="col-lg-12" [@fadeIn]>
+
+        <table class="table table-hover">
+            <thead class="thead-default">
+                <tr class="table-active">
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Kind</th>
+                    <th scope="col">Weight</th>
+                    <th scope="col">Height</th>
+                    <th scope="col">Lifes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pet of pets"
+                    [class.selected]="pet === selectedPet"
+                    (click)="onSelect(pet)">
+                    <td>{{ pet.id }}</td>
+                    <td>{{ pet.name }}</td>
+                    <td>{{ pet.kind }}</td>
+                    <td>{{ pet.weight }}</td>
+                    <td>{{ pet.height }}</td>
+                    <td>{{ pet.number_of_lives }}</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-outline-success" role="button" [routerLink]="['/pet-detail']">
+                            See
+                            </a>
+
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <app-pet-detail [pet]="selectedPet"></app-pet-detail>
+    

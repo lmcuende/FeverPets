@@ -1,13 +1,11 @@
-export class Pet{
-    constructor(
-        public id:              number,
-        public name:            string,
-        public kind:            "cat" | "dog",
-        public weight:          number,
-        public height:          number,
-        public length:          number,
-        public photo_utl:       string,
-        public description:     string,
-        public number_of_lives: number 
-    ){}
+export interface Pet {
+        id:              number;
+        name:            string;
+        kind:            "cat" | "dog";
+        weight:          number;
+        height:          number;
+        length:          number;
+        photo_url:       string;
+        description:     string;
+        number_of_lives?: number; 
 }

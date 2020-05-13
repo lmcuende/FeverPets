@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faHome, faDog, faCat } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faDog, faCat, faEye } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,8 @@ export class AppComponent {
   faHome = faHome;
   faDog = faDog;
   faCat = faCat;
+  faEye = faEye;
+ 
   
   constructor () {
     this.title = 'Fever Pets';
