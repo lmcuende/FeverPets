@@ -40,7 +40,7 @@ export class PetService {
     if (header.length == 0) {
       return;
     }
-    console.log(header);
+    
     let parts = header.split(',');
     var links = {};
     parts.forEach( p => {

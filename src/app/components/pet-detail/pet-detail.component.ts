@@ -13,9 +13,14 @@ import { fadeIn } from '../animations';
 export class PetDetailComponent implements OnInit {
   @Input() pet: Pet;
 
-  constructor() { }
+  constructor() {}
+  
+    
 
   ngOnInit(): void {
-  }
 
+   
+  }
 }
+
+

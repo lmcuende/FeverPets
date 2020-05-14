@@ -37,7 +37,7 @@ export class PetsComponent implements DoCheck, OnChanges, OnInit {
     this.limit = 10;
   }
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
+    
     this.showConfigResponse();
     localStorage.setItem('headers',this.headers[3]);
   }
@@ -53,7 +53,6 @@ export class PetsComponent implements DoCheck, OnChanges, OnInit {
     let arr;
     this.showConfigResponse();
     ur = this.headers[3];
-    console.log(ur);
     arr = this.parse_link_header(ur);
     this.url = arr;
     if (this.url.first) {
@@ -73,11 +72,6 @@ export class PetsComponent implements DoCheck, OnChanges, OnInit {
       // this.url.last = this.url.last.slice(0, -8);
       localStorage.setItem('lastUrl', this.url.last);
     }
-    
-    console.log('first:' + this.url.first);
-    console.log('ĺast:' + this.url.last);
-    console.log('next:' + this.url.next);
-    console.log('prev:' + this.url.prev);
   }
 
 
@@ -91,6 +85,25 @@ export class PetsComponent implements DoCheck, OnChanges, OnInit {
 
   onSelect(pet: Pet): void {
     this.selectedPet = pet;
+    let p: Pet = pet;
+    
+    let value = p.weight / (p.height * p.length);
+    
+    if (p.kind == "cat" && p.number_of_lives == 1) {
+      this.selectedPet.health = "unhealthy";
+    } else if (value < 2 || value > 5) {
+        this.selectedPet.health = "unhealthy";
+      } else if (value >= 2 && value <= 5) {
+          this.selectedPet.health = "very healthy";
+        } else {
+            this.selectedPet.health = "healthy";
+          }
+
+
+
+
+
+
   }
 
   getPets(): void {
@@ -144,7 +157,7 @@ export class PetsComponent implements DoCheck, OnChanges, OnInit {
     if (header.length == 0) {
       return;
     }
-    console.log(header);
+    
     let parts = header.split(',');
     var links = {};
     parts.forEach( p => {

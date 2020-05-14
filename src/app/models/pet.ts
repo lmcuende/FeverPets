@@ -7,5 +7,7 @@ export interface Pet {
         length:          number;
         photo_url:       string;
         description:     string;
-        number_of_lives?: number; 
+        number_of_lives?: number;
+        health?:         "unhealthy" | "very healthy" | "healthy";
+        
 }
