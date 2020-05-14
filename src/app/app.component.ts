@@ -13,7 +13,7 @@ export class AppComponent {
   faDog = faDog;
   faCat = faCat;
   faEye = faEye;
- 
+  
   
   constructor () {
     this.title = 'Fever Pets';
