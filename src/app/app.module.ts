@@ -20,6 +20,7 @@ import { PetDetailComponent } from './components/pet-detail/pet-detail.component
 // Services
 import { PetService } from './services/pet.service';
 import { MessagesComponent } from './components/messages/messages.component';
+import { PetDayComponent } from './components/pet-day/pet-day.component';
 
 
 
@@ -30,7 +31,8 @@ import { MessagesComponent } from './components/messages/messages.component';
     HomeComponent,
     PetsComponent,
     PetDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    PetDayComponent
    
   ],
   imports: [

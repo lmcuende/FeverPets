@@ -5,6 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent }    from './components/home/home.component';
 import { PetsComponent } from './components/pets/pets.component';
 import { PetDetailComponent } from './components/pet-detail/pet-detail.component';
+import { PetDayComponent } from './components/pet-day/pet-day.component';
+
 
 
 
@@ -16,6 +18,7 @@ const appRoutes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'pets', component: PetsComponent},
     {path: 'pet-detail', component: PetDetailComponent},
+    {path: 'pet-of-the-day', component: PetDayComponent},
     {path: '**', component: HomeComponent}
 ];
 

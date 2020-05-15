@@ -12,10 +12,12 @@ import { GLOBAL } from './global';
 export class PetService {
   
   public petsUrl: string = GLOBAL.url + "?_page=1";
+  public petUrl: string = GLOBAL.url;
   public first: string = "";
   public prev:  string = "";
   public next:  string = "";
   public last:  string = "";
+  
   
    
 
@@ -86,54 +88,59 @@ export class PetService {
                  tap(_ => this.log('fetched pets')),
                  catchError(this.handleError<Pet[]>('getPets', []))
                );
-  
   }
+
+  getPet(id: number): Observable<Pet> {
+    const url = `${this.petUrl}${id}`;
+    return this.http.get<Pet>(url).pipe(
+      tap(_ => this.log(`fetched pet id=${id}`)),
+      catchError(this.handleError<Pet>(`getPet id=${id}`))
+    );
+  }
+
 
   private log(message: string) {
       this.messageService.add(`PetService: ${message}`);
   }
 
-getFirstUrl() {
-  let url = localStorage.getItem('firstUrl');
-  if(url != "undefined") {
-      this.first = url;
-  } else {
-      this.first = null;
+  getFirstUrl() {
+    let url = localStorage.getItem('firstUrl');
+    if(url != "undefined") {
+        this.first = url;
+    } else {
+        this.first = null;
+    }
+    return this.first;
   }
-  return this.first;
-}
 
-getLastUrl() {
-  let url = localStorage.getItem('lastUrl');
-  if(url != "undefined") {
-      this.last = url;
-  } else {
-      this.last = null;
+  getLastUrl() {
+    let url = localStorage.getItem('lastUrl');
+    if(url != "undefined") {
+        this.last = url;
+    } else {
+        this.last = null;
+    }
+    return this.last;
   }
-  return this.last;
-}
 
-getPrevUrl() {
-  let url = localStorage.getItem('prevtUrl');
-  if(url != "undefined") {
-      this.prev = url;
-  } else {
-      this.prev = null;
+  getPrevUrl() {
+    let url = localStorage.getItem('prevtUrl');
+    if(url != "undefined") {
+        this.prev = url;
+    } else {
+        this.prev = null;
+    }
+    return this.prev;
   }
-  return this.prev;
-}
 
-getNextUrl() {
-  let url = localStorage.getItem('nextUrl');
-  if(url != "undefined") {
-      this.next = url;
-  } else {
-      this.next = null;
+  getNextUrl() {
+    let url = localStorage.getItem('nextUrl');
+    if(url != "undefined") {
+        this.next = url;
+    } else {
+        this.next = null;
+    }
+    return this.next;
   }
-  return this.next;
-}
-
-
-
 
 }

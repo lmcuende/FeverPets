@@ -28,8 +28,6 @@ export class PetsComponent implements DoCheck, OnChanges, OnInit {
   faArrowUp = faArrowUp;
   faArrowDown = faArrowDown;
   
-  
-  
   constructor(
     private petService: PetService,
     private messageService: MessageService
@@ -42,7 +40,6 @@ export class PetsComponent implements DoCheck, OnChanges, OnInit {
     localStorage.setItem('headers',this.headers[3]);
   }
   
-
   ngOnInit() {
     this.getPets();
     this.showConfigResponse();
@@ -98,12 +95,6 @@ export class PetsComponent implements DoCheck, OnChanges, OnInit {
         } else {
             this.selectedPet.health = "healthy";
           }
-
-
-
-
-
-
   }
 
   getPets(): void {
